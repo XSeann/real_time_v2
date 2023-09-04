@@ -7,7 +7,7 @@ app.use(cors())
 
 const httpServer = require("http").createServer();
 const io = require("socket.io")(httpServer, {
-  cors: {origin: 'http://localhost:3000'},
+  cors: {origin: 'https://real-time-v2-fr.onrender.com/'},
   allowedHeaders: ["my-custom-header"],
   credentials: true
 });
