@@ -3,7 +3,12 @@ import {io} from 'socket.io-client'
 function App() {
 
   const send = () => {
-    const socket = io("http://localhost:4000");
+    const socket = io("https://real-time-v2.onrender.com", {
+      withCredentials: true,
+      extraHeaders: {
+        "my-custom-header": "abcd"
+      }
+    });
 
     socket.on("connect", () => {
       // either with send()

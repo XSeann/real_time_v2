@@ -7,7 +7,9 @@ app.use(cors())
 
 const httpServer = require("http").createServer();
 const io = require("socket.io")(httpServer, {
-  cors: {origin: 'http://localhost:3000'}
+  cors: {origin: 'http://localhost:3000'},
+  allowedHeaders: ["my-custom-header"],
+  credentials: true
 });
 
 io.on("connection", socket => {
