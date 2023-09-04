@@ -4,6 +4,7 @@ function App() {
 
   const send = () => {
     const socket = io("https://real-time-v2.onrender.com", {
+      transports: ["websocket", "polling"],
       withCredentials: true,
       extraHeaders: {
         "my-custom-header": "abcd"
